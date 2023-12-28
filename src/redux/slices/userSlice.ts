@@ -4,9 +4,7 @@ export interface UserState{
     name:string
 }
 
-const user:UserState={name:"juan"}
-
-const initialState=[user];
+const initialState:UserState[]=[];
 
 export const userSlice = createSlice({
     name:"user",
