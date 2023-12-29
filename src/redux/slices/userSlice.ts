@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface UserState{
+export interface User{
     name:string
     lat:number,
     lon:number
