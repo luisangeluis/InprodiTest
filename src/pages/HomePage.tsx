@@ -6,10 +6,12 @@ import { useGetUserWeatherQuery } from "../redux/services/weatherApi";
 const Home=()=>{
   const users = useAppSelector(state=>state.user);
   const dispatch = useAppDispatch();
-  const { data, error, isLoading, isFetching } = useGetUserWeatherQuery({lat:90,lon:180,appid:"4214c6fe0c0be71f13084263dd5761b1"});
+  const { data, error, isLoading, isFetching } = useGetUserWeatherQuery({lat:20.6668200,lon:-103.3918200,appid:"3ee700bd71331ae8fc1b34c4ed89d489"});
 
   console.log({users});
   console.log(data);
+
+  
   
   
   

@@ -10,7 +10,7 @@ type UserWeather={
     windSpeed:number,
 }
 
-type OptionalParams={
+type Params={
     lat:number,
     lon:number,
     appid:string
@@ -19,10 +19,10 @@ type OptionalParams={
 
 export const weatherApi=createApi({
     reducerPath:"weatherApi",
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://api.openweathermap.org/data/3.0' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://api.openweathermap.org/data/2.5' }),
     endpoints: (builder) => ({
-        getUserWeather: builder.query<UserWeather, OptionalParams>({
-          query: () => "/onecall",
+        getUserWeather: builder.query<UserWeather, Params>({
+          query: ({lat,lon,appid}) => `/onecall?lat=${lat}&lon=${lon}&appid=${appid}`,
         }),
       }),
 
