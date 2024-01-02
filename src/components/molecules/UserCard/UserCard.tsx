@@ -33,18 +33,18 @@ const UserCard: React.FC<{ user: User }>=({ user })=>{
         
     return(
         <article className={styles.userCard}>
-                <button className={styles.mainBtn} onClick={handlerClick}>
-            <div className={styles.cardBody}>
+            <button className={styles.mainBtn} onClick={handlerClick}>
+                <div className={styles.cardBody}>
                     <p>Id: {user.id}</p>
                     <h3>{user.name}</h3>
                     <p>Lat: {user.lat}</p>
                     <p>Lon: {user.lon}</p>
-            </div>
-            <div className={styles.btnSection}>
-                <button onClick={(e)=>updateUser(user,e)}>Update</button>
-                <button onClick={(e)=>deleteAUser(user.id,e)}>Delete</button>
-            </div>
-                </button>
+                </div>
+                <div className={styles.btnSection}>
+                    <button onClick={(e)=>updateUser(user,e)}>Update</button>
+                    <button onClick={(e)=>deleteAUser(user.id,e)}>Delete</button>
+                </div>
+            </button>
         </article>
     )
 }

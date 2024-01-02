@@ -5,6 +5,7 @@ import { User } from '../slices/userSlice';
 import {UserWeather} from "../../../types";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
+const openweatherToken = import.meta.env.VITE_OPENWEATHER_TOKEN
 
 export const weatherApi=createApi({
     reducerPath:"weatherApi",
@@ -17,7 +18,7 @@ export const weatherApi=createApi({
               throw new Error('User not found'); 
               
             const {lat,lon} = user;
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=3ee700bd71331ae8fc1b34c4ed89d489`);
+            const response = await fetch(`${baseUrl}/onecall?lat=${lat}&lon=${lon}&appid=${openweatherToken}`);
             // console.log({response});
             if(!response.ok)
               throw new Error('La solicitud al servidor falló');

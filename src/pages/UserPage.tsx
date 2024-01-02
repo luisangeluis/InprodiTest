@@ -38,6 +38,8 @@ const UserPage=()=>{
                 <p>Temperature: {data.current.temp}</p>
                 <p>Humidity: {data.current.humidity}</p>
                 <p>Wind speed: {data.current.wind_speed}</p>
+                <p>Weather: {data.current.weather[0].main}</p>
+                <p>Description: {data.current.weather[0].description}</p>
                 <img src={`https://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`}></img>
               </>
             )

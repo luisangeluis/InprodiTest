@@ -3,6 +3,11 @@
   flex-direction: column;
   min-height: inherit;
 
+  /* background: #ffcc00;  */
+  background: #000000; 
+  /* background: linear-gradient(to right, #ffcc00, #ffffff, #ff6699);  */
+  background: radial-gradient(ellipse at 1% 1%,#fffff1 1%,#02684290 20%, #00381790 50%); 
+
   main{
     /* display: flex; */
     /* justify-content: center;
