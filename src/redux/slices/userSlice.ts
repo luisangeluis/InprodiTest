@@ -46,9 +46,19 @@ export const userSlice = createSlice({
     reducers:{
         addUser:(state,action)=>[...state, action.payload],
         eraseUsers:()=>[],
-        resetUsers:()=>[...initialState]
+        resetUsers:()=>[...initialState],
+        updateUser:(state,action)=>{
+            const {index,newData} = action.payload;
+            
+            state[index] = {...state[index],...newData}
+        },
+        deleteUser:(state,action)=>{
+            const index = action.payload;
+            state.splice(index, 1);
+        }
+    
     }
 })
 
-export const {addUser,eraseUsers,resetUsers} = userSlice.actions;
+export const {addUser,eraseUsers,resetUsers,updateUser,deleteUser} = userSlice.actions;
 export default userSlice.reducer;

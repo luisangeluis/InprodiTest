@@ -1,5 +1,17 @@
 .home{
+    min-height: 100%;
     padding: .5rem;
+
+    .btnSection{
+        /* width: 100%; */
+        position: fixed;
+        right: 10%;
+        bottom: 5%;
+    }
+
+    /* .btnNewUser{
+        position: relative;
+    } */
 }
 
 
@@ -7,9 +19,32 @@
 @media screen and (min-width:768px){
     .home{
         padding: 1rem;
-        .userSection{
-            display: flex;
+        .usersSection{
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
             gap: .5rem;
+        }
+
+        /* .btnSection{
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+        } */
+    }
+}
+
+@media screen and (min-width:992px){
+    .home{
+        .usersSection{
+            grid-template-columns: repeat(4,1fr);
+        }
+    }
+}
+
+@media screen and (min-width:1200px){
+    .home{
+        .usersSection{
+            grid-template-columns: repeat(5,1fr);
         }
     }
 }

@@ -1,0 +1,13 @@
+.mainLayout{
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
+
+  main{
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    flex-grow: 1;
+
+  }
+}

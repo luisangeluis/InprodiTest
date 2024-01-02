@@ -1,4 +1,26 @@
 *{
   margin: 0;
   box-sizing: border-box;
+  /* border:solid 1px red; */
 }
+
+html,body, #root{
+  min-height: 100vh;
+}
+
+body{
+  background-color: lightgrey;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  color:inherit;
+  text-decoration: none;
+}
+ul{
+  padding: 0;
+}
+

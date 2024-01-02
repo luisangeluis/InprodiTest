@@ -4,9 +4,11 @@ import { weatherApi } from "./services/weatherApi";
 import storage from 'redux-persist/lib/storage'
 // import persistReducer from "redux-persist/es/persistReducer";
 import {persistReducer} from "redux-persist";
+import userFormSlice from "./slices/UserFormSlice";
 
 const rootReducer = combineReducers({
     user: userSlice,
+    userForm:userFormSlice,
     [weatherApi.reducerPath]:weatherApi.reducer
 })
 
