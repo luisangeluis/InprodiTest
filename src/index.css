@@ -3,12 +3,24 @@
   box-sizing: border-box;
   /* border:solid 1px red; */
 }
+:root{
+  --color-one:#003817;
+  --color-two:#026842;
+  --color-three:#fffff1;
+  --color-four:#9d5353;
+  --color-four-gradient:#9d535350;
+  --color-five:#ede6db;
+  --color-dark:#000000;
+  --color-white:#ffffff;
+}
 
 html,body, #root{
   min-height: 100vh;
 }
 
 body{
+  font-family: "roboto",Open Sans,sans-serif;
+  font-weight:400;
   background-color: lightgrey;
 }
 

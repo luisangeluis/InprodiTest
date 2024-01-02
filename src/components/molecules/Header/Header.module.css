@@ -1,12 +1,24 @@
 .header{
+  width: 100%;
+  min-height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1;
   text-align: center;
+  border-bottom: solid 1px silver;
+  background-color: var(--color-four);
   
 }
 
 @media screen and (min-width:768px){
   .header{
     padding: 1rem;
-    display: flex;
+    min-height: 6rem;
+
+   flex-direction: row;
     justify-content: space-between;
 
     h1{

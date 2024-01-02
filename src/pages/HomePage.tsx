@@ -16,7 +16,7 @@ const Home=()=>{
   const userForm = useAppSelector(state=>state.userForm);
   const dispatch = useAppDispatch();
 
-  const setOpenForm =(value:boolean)=> dispatch(setUserForm({openForm:value}))
+  const setOpenForm =(value:boolean)=> dispatch(setUserForm({openForm:value,name:"",lat:undefined,lon:undefined}))
   
   // useEffect(()=>{
   //   dispatch(resetUsers());

@@ -2,17 +2,20 @@
   display: flex;
   flex-direction: column;
   min-height: inherit;
-
-  /* background: #ffcc00;  */
-  background: #000000; 
-  /* background: linear-gradient(to right, #ffcc00, #ffffff, #ff6699);  */
-  background: radial-gradient(ellipse at 1% 1%,#fffff1 1%,#02684290 20%, #00381790 50%); 
+  background: var(--color-white); 
+  background: radial-gradient(ellipse at 1% 1%,var(--color-white) 1%,#02684290 40%, #00381790 60%); 
+  /* background: radial-gradient(ellipse at 1% 1%,var(--color-white) 20%,#02684290 90%, #02684290 30%);  */
 
   main{
-    /* display: flex; */
-    /* justify-content: center;
-    align-items: center; */
     flex-grow: 1;
+    padding-top: 9rem;
+  }
+}
 
+@media screen and (min-width:768px){
+  .mainLayout{
+    main{
+      padding-top: 8rem;
+    }
   }
 }
