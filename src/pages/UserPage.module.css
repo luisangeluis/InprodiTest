@@ -1,3 +1,46 @@
 .userPage{
     min-height: 100%;
+    
+    .userDetail{
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        margin: 0 auto;
+        width: 95%;
+        min-height: 50vh;
+        text-align: center;
+        gap: .5rem;
+        background-color: var(--color-four);
+        border:  solid 1px silver;
+        border-radius: 1rem;
+
+        .userInfo,.weatherInfo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 1rem;
+
+        }
+
+    }
+}
+
+@media screen and (min-width:768px) {
+    .userPage{
+        .userDetail{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: 1fr;
+            gap: 1rem;
+            background-color:initial;
+            border:initial;
+
+            .userInfo{
+                background-color:var(--color-four) ;
+            }
+            .weatherInfo{
+                background-color: var(--color-five);
+            }
+        }
+    }
 }
