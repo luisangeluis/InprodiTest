@@ -57,19 +57,19 @@ const UserForm = () => {
       <InputLabelText register={register("name",{required:"Type a name",
         maxLength:{value:150,message:"Name must have less than 150 characters"}})} id="name" 
         label="Name" placeholder="Type a name" defaultValue={userForm.name && userForm.name}/>
-      {errors.name && errors.name?.message}
+      {errors.name && <p className={styles.alert}>{errors.name?.message}</p>}
       <InputLabelNumber id={"lat"} placeholder={"Type a latitude"} label="Latitude"
         register={register("lat", {required:"Type a value between -90 and 90",
         pattern:{value:/^(-?(90(\.0{1,6})?)|(-?([0-8]?\d(\.\d{1,6})?)))$/,message:"Type a valid value"} })} 
         defaultValue={userForm.lat && userForm.lat}/>
-      {errors.lat && <p>{errors.lat?.message}</p>}
-      {errors.lat?.type==="min" || errors.lat?.type==="max" && <p>{"Type a value between -90 and 90"}</p>}
+      {errors.lat && <p className={styles.alert}>{errors.lat?.message}</p>}
+      {errors.lat?.type==="min" || errors.lat?.type==="max" && <p className={styles.alert}>{"Type a value between -90 and 90"}</p>}
       <InputLabelNumber id={"lon"} placeholder={"Type a longitud"} label="Longitude" register={register("lon",
         {required:"Type a value between -180 and 180",
         pattern:{value:/^(-?(180(\.0{1,6})?)|(-?((1[0-7]\d|\d{1,2})(\.\d{1,6})?)))$/,
         message:"Type a valid number"}})} defaultValue={userForm.lon && userForm.lon}/>
-      {errors.lon && <p>{errors.lon?.message}</p>}
-      {errors.lon?.type==="min" || errors.lon?.type==="max" && <p>{"Type a value between -180 and 180"}</p>}
+      {errors.lon && <p className={styles.alert}>{errors.lon?.message}</p>}
+      {errors.lon?.type==="min" || errors.lon?.type==="max" && <p className={styles.alert}>{"Type a value between -180 and 180"}</p>}
       <input type="submit" value={userForm.id ? "Update user" : "Create user"} />
     </form>
   )

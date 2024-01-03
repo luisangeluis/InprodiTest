@@ -17,7 +17,7 @@ const DailyWeather:React.FC<DailyData>=({daily})=>{
 
     return(
         <section className={styles.dailyWeather}>
-            <h3>Daily weather</h3>
+            <h3 className={styles.subtitle}>Daily weather</h3>
             <section className={styles.dailyWeatherContainer}>
 
             {

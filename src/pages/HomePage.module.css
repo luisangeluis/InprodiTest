@@ -2,16 +2,38 @@
     min-height: 100%;
     padding: .5rem;
 
+    .title{
+        margin: 1rem 0;
+        font-size: 2rem;
+
+    }
+
     .btnSection{
         /* width: 100%; */
         position: fixed;
         right: 10%;
         bottom: 5%;
+
+        .btnNewUser{
+            padding: .5rem;
+            background-color: var(--color-four);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border:none;
+            font-weight: bolder;
+            border:solid 2px silver;
+            transition: transform 300ms;
+            
+            &:hover{
+                background-color: var(--color-dark);
+                color: var(--color-white);
+                transform: scale(1.03);
+            }
+        }
     }
 
-    /* .btnNewUser{
-        position: relative;
-    } */
+    
 }
 
 

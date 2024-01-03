@@ -1,9 +1,14 @@
 .dailyWeather{
   margin: 1rem 0;
   padding: 1rem;
+
+  .subtitle{
+    margin: 1rem 0;
+    font-size: 1.7rem;    
+
+  }
   
   .dailyWeatherContainer{
-
     display: grid;
     gap: .5rem;
   }

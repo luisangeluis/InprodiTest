@@ -4,6 +4,7 @@ import styles from "./MainLayout.module.css";
 
 //Components
 import Header from '../../molecules/Header/Header';
+import Footer from '../../molecules/Footer/Footer';
 
 const MainLayout = () => {
   return (
@@ -12,7 +13,7 @@ const MainLayout = () => {
       <main>
         <Outlet />
       </main>
-      <footer>FOOTER</footer>
+      <Footer />
     </section>
   )
 }

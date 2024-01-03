@@ -34,8 +34,6 @@
         border: 3px solid var(--color-white);
     }
    
-    
-    
     .mainBtn{
         all:unset;
         display: block;
@@ -52,6 +50,31 @@
         align-items: center;
         gap: 1rem;
         padding: 1rem;
+
+        >button{
+            padding: .2rem .5rem;
+            border-radius: .5rem;
+            transition: transform 300ms;
+
+            &:hover{
+                transform: scale(1.03);
+                cursor: pointer;
+            }
+        }
+
+        > button:nth-child(1){
+            background-color: var(--color-one);
+            color: var(--color-white);
+            font-weight: bold;
+        }
+        > button:nth-child(2){
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            font-weight: bold;
+
+        }
+
+        
     }
 }
 

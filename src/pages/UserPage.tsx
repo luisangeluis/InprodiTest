@@ -40,7 +40,7 @@ const UserPage=()=>{
 
   return(
     <section className={styles.userPage}>
-      <h2>User weather</h2>
+      <h2 className={styles.title}>User weather</h2>
       <article className={styles.userDetail}>
         {!user?.id ? 
           <h2>User doesn't exist</h2> :

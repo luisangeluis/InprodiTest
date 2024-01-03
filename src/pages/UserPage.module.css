@@ -1,6 +1,10 @@
 .userPage{
     min-height: 100%;
     
+    .title{
+        margin: 1rem 0;
+        font-size: 2rem;
+    }
     .userDetail{
         display: grid;
         grid-template-rows: 1fr 2fr;

@@ -10,6 +10,19 @@
   text-align: center;
   border-bottom: solid 1px silver;
   background-color: var(--color-four);
+
+  h1{
+    color: var(--color-white);
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+
+  nav{
+    li{
+      font-size: 1.3rem;
+      font-weight: bolder;
+    }
+  }
   
 }
 
@@ -32,7 +45,7 @@
       flex-grow: 1;
 
       ul{
-        padding: .5rem;
+        padding: 1rem;
       }
     }
   }

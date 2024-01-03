@@ -1,3 +1,27 @@
 .userForm{
-  
+  padding: 1rem;
+  background-color: var(--color-four);
+  border-radius: 1rem;
+  border: solid 2px silver;
+
+  input[type="submit"]{
+    padding: .3rem .5rem;
+    background-color: var(--color-four);
+    color: var(--color-dark);
+    border-radius: .5rem;
+    border: solid 2px silver;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: transform 400ms;
+
+    &:hover{
+      transform: scale(1.03);
+    }
+  }
+  .alert{
+    color: var(--color-one);
+    margin-bottom: 1.3rem;
+    font-size: .8rem;
+    font-weight: bold;
+  }
 }

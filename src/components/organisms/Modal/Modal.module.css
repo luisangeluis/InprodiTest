@@ -18,6 +18,19 @@
     .modalHeader{
       padding: .5rem;
       text-align: right;
+
+      button{
+        padding: .3rem .5rem;
+        background-color: var(--color-dark);
+        color: var(--color-white);
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: transform 300ms;
+
+        &:hover{
+          transform: scale(1.03);
+        }
+      }
     }
   }
   

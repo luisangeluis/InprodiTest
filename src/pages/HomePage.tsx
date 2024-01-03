@@ -24,7 +24,7 @@ const Home=()=>{
 
   return(
     <section className={styles.home}>
-      <h2>Users</h2>
+      <h2 className={styles.title}>Users</h2>
       <section className={styles.usersSection}>
         {
           users.map((user,i)=><UserCard user={user} key={i}/>)
