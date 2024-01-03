@@ -7,6 +7,7 @@ import { useAppSelector } from "../redux/hooks";
 //Styles
 import styles from "./UserPage.module.css";
 import DailyWeather from "../components/organisms/DailyWeather/DailyWeather";
+import convertToDate from "../utils/convertToDate";
 
 
 const UserPage=()=>{
@@ -26,13 +27,14 @@ const UserPage=()=>{
     if(data){
       return(
         <div className={styles.weatherInfo}>
+          <h3 style={{color:"#ffffff"}}>{`${convertToDate(data.current.dt)}`}</h3>
           <img src={`https://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`}></img>
-          <p>City: {data.timezone }</p>
-          <p>Temperature: {data.current.temp}</p>
-          <p>Humidity: {data.current.humidity}</p>
-          <p>Wind speed: {data.current.wind_speed}</p>
-          <p>Weather: {data.current.weather[0].main}</p>
-          <p>Description: {data.current.weather[0].description}</p>
+          <p>City: <b>{data.timezone }</b></p>
+          <p>Temperature: <b>{data.current.temp}</b></p>
+          <p>Humidity: <b>{data.current.humidity}%</b></p>
+          <p>Wind speed: <b>{data.current.wind_speed} m/s</b></p>
+          <p>Weather: <b>{data.current.weather[0].main}</b></p>
+          <p>Detail weather: <b>{data.current.weather[0].description}</b></p>
         </div>
       )
     }

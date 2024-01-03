@@ -21,8 +21,8 @@ const DailyWeather:React.FC<DailyData>=({daily})=>{
             <section className={styles.dailyWeatherContainer}>
 
             {
-                daily.length && daily.map((e,i)=><DailyWeatherCard key={i} temp={e.temp} humidity={e.humidity} wind_speed={e.wind_speed}
-                     weather={e.weather}/> )
+                daily.length && daily.map((e,i)=><DailyWeatherCard key={i} temp={e.temp} 
+                humidity={e.humidity} wind_speed={e.wind_speed} weather={e.weather} dt={e.dt}/> )
             }
             </section>
 

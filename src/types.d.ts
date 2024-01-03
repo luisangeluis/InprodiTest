@@ -14,6 +14,7 @@ export interface WeatherCharacteristics{
   humidity:number;
   wind_speed:number
   weather:Weather[];
+  dt:number;
 }
 
 export type WeatherCharacteristicsDaily={
@@ -21,6 +22,7 @@ export type WeatherCharacteristicsDaily={
   humidity:number;
   wind_speed:number
   weather:Weather[];
+  dt:number;
 }
 
 export interface UserWeather{
