@@ -1,0 +1,35 @@
+.dailyWeather{
+  margin: 1rem 0;
+  padding: 1rem;
+  
+  .dailyWeatherContainer{
+
+    display: grid;
+    gap: .5rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .dailyWeather{
+    
+
+    .dailyWeatherContainer{
+      grid-template-columns: repeat(3,1fr);
+      gap: 1rem;
+    }
+
+  }
+  
+}
+
+@media screen and (min-width:998px) {
+  .dailyWeather{
+    
+    .dailyWeatherContainer{
+      grid-template-columns: repeat(4,1fr);
+
+    }
+
+  }
+  
+}

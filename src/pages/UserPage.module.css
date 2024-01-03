@@ -8,7 +8,7 @@
         width: 95%;
         min-height: 50vh;
         text-align: center;
-        gap: .5rem;
+        /* gap: .5rem; */
         background-color: var(--color-four);
         border:  solid 1px silver;
         border-radius: 1rem;
@@ -20,6 +20,16 @@
             flex-direction: column;
             border-radius: 1rem;
 
+        }
+        .userInfo{
+            padding: .5rem;
+        }
+        .weatherInfo{
+            padding:1rem;
+            img{
+                min-width: 120px ;
+                min-height: 120px;
+            }
         }
 
     }
@@ -36,9 +46,12 @@
             border:initial;
 
             .userInfo{
+                border: solid 1px silver;
                 background-color:var(--color-four) ;
             }
             .weatherInfo{
+                border: solid 1px silver;
+
                 background-color: var(--color-five);
             }
         }

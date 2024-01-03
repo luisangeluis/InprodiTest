@@ -4,6 +4,10 @@ export interface Weather{
   description:string;
 }
 
+export interface DetailWeather{
+  min:number;
+  max:number;
+}
 
 export interface WeatherCharacteristics{
   temp:number;
@@ -12,12 +16,8 @@ export interface WeatherCharacteristics{
   weather:Weather[];
 }
 
-// export type WeatherCharacteristicsDaily = Omit<WeatherCharacteristics,"temp"> & {
-//   temp:any[];
-// }
-
 export type WeatherCharacteristicsDaily={
-  temp:object;
+  temp:DetailWeather;
   humidity:number;
   wind_speed:number
   weather:Weather[];
@@ -28,5 +28,5 @@ export interface UserWeather{
   lon:number;
   timezone:string;
   current:WeatherCharacteristics;
-  daily:WeatherCharacteristics[];
+  daily:WeatherCharacteristicsDaily[];
 }

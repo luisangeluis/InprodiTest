@@ -26,13 +26,13 @@ const UserPage=()=>{
     if(data){
       return(
         <div className={styles.weatherInfo}>
+          <img src={`https://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`}></img>
           <p>City: {data.timezone }</p>
           <p>Temperature: {data.current.temp}</p>
           <p>Humidity: {data.current.humidity}</p>
           <p>Wind speed: {data.current.wind_speed}</p>
           <p>Weather: {data.current.weather[0].main}</p>
           <p>Description: {data.current.weather[0].description}</p>
-          <img src={`https://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`}></img>
         </div>
       )
     }
@@ -55,8 +55,7 @@ const UserPage=()=>{
           )
         }
       </article>
-      {data && <DailyWeather daily={data.daily}/>
-      }
+      {data && <DailyWeather daily={data.daily}/>}
     </section>
   )
 }

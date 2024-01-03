@@ -16,7 +16,7 @@ const InputLabelNumber:React.FC<InputLabelNumberAttributes> = ({register,label,i
     <section className={styles.inputSection} >
       <label htmlFor={id}>{label}</label>
       <br />
-      <input type="number" id={id} placeholder={placeholder} {...register}/>
+      <input type="text" id={id} placeholder={placeholder} {...register}/>
     </section>
   )
 }

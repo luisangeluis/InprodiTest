@@ -1,8 +1,9 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 
 //Redux
-import { User, addUser, deleteUser, updateUser } from "../../../redux/slices/userSlice";
+import { User, addUser, updateUser } from "../../../redux/slices/userSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { setUserForm } from "../../../redux/slices/UserFormSlice";
 
 //Styles
 import styles from "./UserForm.module.css";
@@ -29,8 +30,13 @@ const UserForm = () => {
     }
   });
 
-  const onSubmit:SubmitHandler<IFormInput> = data => userForm.id ? 
-    updateAUser(userForm.id,data):  createUser(data);
+  const onSubmit:SubmitHandler<IFormInput> = data => {
+    userForm.id ? 
+      updateAUser(userForm.id,data) : 
+      createUser(data);
+    
+    dispatch(setUserForm({openForm:false,id:0,name:"",lat:undefined,lon:undefined}))
+  }
   
   const createUser =(data:Partial<User>)=>{
     const newUserId = users[users.length-1].id+1;
@@ -46,22 +52,25 @@ const UserForm = () => {
       dispatch(updateUser({index,newData}));
   }
   
-  
   return (
     <form className={styles.userForm} onSubmit={handleSubmit(onSubmit)}> 
       <InputLabelText register={register("name",{required:"Type a name",
         maxLength:{value:150,message:"Name must have less than 150 characters"}})} id="name" 
-        label="name" placeholder="Type a name" defaultValue={userForm.name && userForm.name}/>
+        label="Name" placeholder="Type a name" defaultValue={userForm.name && userForm.name}/>
       {errors.name && errors.name?.message}
-      <InputLabelNumber id={"lat"} placeholder={"Type a latitude"} label="lat" register={register("lat",
-        {required:"Type a value between -90 and 90",min:-90, max:90})} defaultValue={userForm.lat && userForm.lat}/>
+      <InputLabelNumber id={"lat"} placeholder={"Type a latitude"} label="Latitude"
+        register={register("lat", {required:"Type a value between -90 and 90",
+        pattern:{value:/^(-?(90(\.0{1,6})?)|(-?([0-8]?\d(\.\d{1,6})?)))$/,message:"Type a valid value"} })} 
+        defaultValue={userForm.lat && userForm.lat}/>
       {errors.lat && <p>{errors.lat?.message}</p>}
       {errors.lat?.type==="min" || errors.lat?.type==="max" && <p>{"Type a value between -90 and 90"}</p>}
-      <InputLabelNumber id={"lon"} placeholder={"Type a longitud"} label="lon" register={register("lon",
-      {required:"Type a value between -180 and 180",min:-180, max:180})} defaultValue={userForm.lon && userForm.lon}/>
+      <InputLabelNumber id={"lon"} placeholder={"Type a longitud"} label="Longitude" register={register("lon",
+        {required:"Type a value between -180 and 180",
+        pattern:{value:/^(-?(180(\.0{1,6})?)|(-?((1[0-7]\d|\d{1,2})(\.\d{1,6})?)))$/,
+        message:"Type a valid number"}})} defaultValue={userForm.lon && userForm.lon}/>
       {errors.lon && <p>{errors.lon?.message}</p>}
       {errors.lon?.type==="min" || errors.lon?.type==="max" && <p>{"Type a value between -180 and 180"}</p>}
-      <input type="submit" value="New user"/>
+      <input type="submit" value={userForm.id ? "Update user" : "Create user"} />
     </form>
   )
 }

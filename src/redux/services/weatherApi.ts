@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { User } from '../slices/userSlice';
 
 //Types
-import {UserWeather} from "../../../types";
+import {UserWeather} from "../../types";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 const openweatherToken = import.meta.env.VITE_OPENWEATHER_TOKEN
