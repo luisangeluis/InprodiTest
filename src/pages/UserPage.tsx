@@ -6,6 +6,7 @@ import { useAppSelector } from "../redux/hooks";
 
 //Styles
 import styles from "./UserPage.module.css";
+import DailyWeather from "../components/organisms/DailyWeather/DailyWeather";
 
 
 const UserPage=()=>{
@@ -54,6 +55,8 @@ const UserPage=()=>{
           )
         }
       </article>
+      {data && <DailyWeather daily={data.daily}/>
+      }
     </section>
   )
 }
